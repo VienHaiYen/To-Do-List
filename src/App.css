@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h3 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 15px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App {
+    min-width: 500px;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 50px;
+    padding: 30px;
+    border: 1px solid #333;
+    overflow-y: overlay;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button.btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #000;
+}
+.tasks {
+    transition: all 0.5s linear;
+}
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin: 10px;
+    border: 1px solid #555;
+    cursor: pointer;
+    user-select: none;
+    transition: border 0.2s linear;
+    animation: moveLeft 0.1s linear;
+}
+@keyframes moveLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.hide-item {
+    animation: rightHide 0.8s linear;
+}
+@keyframes rightHide {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+.done {
+    border-color: rgb(0, 0, 0);
+    border-left-width: 4px;
+}
+.task-form {
+    padding: 0 10px 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
